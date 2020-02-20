@@ -64,6 +64,7 @@ let solveIt statement () =
             |> List.ofSeq
         Seq.iter (scannedBooks.Add >> ignore) books
         lib.Id, books)
+    |> List.filter (snd >> List.isEmpty >> not)
     |> ProblemSubmission
 
 let renderSubmission (ProblemSubmission sub) =
